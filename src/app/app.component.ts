@@ -30,7 +30,10 @@ export class MyApp implements OnInit {
     this.initializeApp();
 
     // set our app's pages
-    this.pages = [{ title: 'Hello Ionic', component: HelloIonicPage }, { title: 'My First List', component: ListPage }];
+    this.pages = [
+      { title: 'Hello Ionic', component: HelloIonicPage },
+      { title: 'My First List', component: ListPage }
+    ];
   }
   ngOnInit() {
     this.routeChange.listenChange.subscribe(
@@ -57,6 +60,6 @@ export class MyApp implements OnInit {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component, { count: 15 });
   }
 }
